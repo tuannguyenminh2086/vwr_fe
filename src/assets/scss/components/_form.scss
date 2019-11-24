@@ -1,0 +1,60 @@
+.vw-form {
+  &__row {
+    display: grid;
+    grid-gap: 0 1.5rem;
+    &--small-gap {
+      grid-gap: 0 0.5rem;
+    }
+    &--1-1 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &--1-1-1-1 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &--1-1-1-1-1-1 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &--2-1 {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  &__group {
+    position: relative;
+    margin-bottom: 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &--pr {
+      &-4 {
+        padding-right: 4rem;
+      }
+    }
+    .invalid-feedback {
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
+  &__label {
+    color: $color-black;
+    font-size: 0.875rem;
+    padding-bottom: 0;
+    margin-bottom: 0.25rem;
+    &--mb {
+      &-1 {
+        margin-bottom: 1rem;
+      }
+    }
+    &--hide {
+      opacity: 0;
+    }
+  }
+  &__control {
+    height: auto;
+    font-size: 0.8125rem;
+    padding: 0.875rem 1rem;
+    line-height: $line-height;
+    border-color: $color-border;
+  }
+}

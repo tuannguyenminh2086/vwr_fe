@@ -1,0 +1,42 @@
+@import './../../../assets/scss/base/variables';
+.vw-info {
+  padding: 0;
+  &__section-title {
+    margin-top: 2rem;
+    color: $color-form-title;
+  }
+  &__form {
+    &-bottom-row {
+      justify-content: flex-end;
+    }
+    &-col {
+      padding-bottom: 1rem;
+      @media screen and (width: 768px) {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      &--align-right {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    &-issue-image {
+      border: 1px solid $color-app-bg;
+      padding: 5px;
+    }
+  }
+  &__break-line {
+    border-top-width: 1px;
+  }
+  &__select {
+    &-loading-icon {
+      position: absolute;
+      right: 1.5rem;
+    }
+  }
+  /deep/ input:placeholder-shown {
+    color: #6c757d;
+  }
+}
+
+/**/

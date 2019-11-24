@@ -1,0 +1,48 @@
+.vw-modal {
+  .modal-dialog {
+    max-width: 39.375rem;
+    text-align: left;
+  }
+  .modal-header {
+    padding: 2rem 1.5rem 0;
+    border-bottom: 0;
+  }
+  .modal-body {
+    padding: 1.5rem;
+  }
+  .modal-footer {
+    border-top: 0;
+    padding: 1.5rem 1.5rem 2rem;
+  }
+  &--confirm {
+    .modal-dialog {
+      width: 23rem;
+    }
+    .modal-body {
+      padding: 2rem 0 1rem;
+    }
+    .modal-footer {
+      padding: 0.5rem 1.5rem 1.5rem;
+      flex-direction: row-reverse;
+      justify-content: stretch;
+      margin: 0 -0.5rem;
+      .btn {
+        margin: 0 0.5rem;
+        flex: 1 0 auto;
+      }
+    }
+  }
+  &__heading {
+    &-title {
+      font-weight: 500;
+      font-size: 1.125rem;
+      color: $color-subtext;
+    }
+  }
+  &__message {
+    font-weight: 500;
+    font-size: 1.125rem;
+    text-align: center;
+    color: $color-black;
+  }
+}

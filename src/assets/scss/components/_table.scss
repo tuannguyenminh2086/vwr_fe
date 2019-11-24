@@ -1,0 +1,281 @@
+.vw-table {
+  &__control {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    &--footer {
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+    &--justify {
+      &-end {
+        justify-content: flex-end;
+      }
+      &-between {
+        justify-content: space-between;
+      }
+    }
+    &--align {
+      &-center {
+        align-items: center;
+      }
+    }
+    &-col {
+      flex: 0 1 auto;
+      margin-bottom: 1rem;
+      &--50 {
+        flex-basis: 50%;
+        max-width: 50%;
+        @media screen and (max-width: 991px) {
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+      }
+      &--pull {
+        &-left {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+  &__table {
+    &--error {
+      tbody {
+        background-color: rgba(220, 53, 69, 0.3);
+      }
+    }
+    &-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-label {
+        font-size: 1rem;
+        font-weight: 500;
+        padding-left: 0.5rem;
+      }
+    }
+    &-row {
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: rgba(56, 120, 243, 0.1);
+      }
+    }
+    &-influencer {
+      display: flex;
+      align-items: center;
+      &-avatar {
+        width: 2rem;
+        height: 2rem;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: $color-subtext;
+      }
+      &-name {
+        flex: 1 0 calc(100% - 3.5rem);
+        max-width: calc(100% - 3.5rem);
+        padding-left: 0.5rem;
+      }
+    }
+    &-platforms {
+      display: grid;
+      grid-gap: 0 1rem;
+      grid-template-areas: "facebook youtube instagram";
+      grid-template-columns: repeat(3, 1.5rem);
+    }
+    &-platform {
+      &--facebook {
+        grid-area: facebook;
+      }
+      &--youtube {
+        grid-area: youtube;
+      }
+      &--instagram {
+        grid-area: instagram;
+      }
+    }
+    &-status {
+      &[status='Pending'] {
+        color: $color-orange;
+      }
+    }
+    &-actions {
+      display: flex;
+      justify-content: center;
+      &-toggle {
+        height: 1.25rem;
+        cursor: pointer;
+        user-select: none;
+        min-width: 1.0625rem;
+        .dropdown-toggle {
+          display: flex;
+          padding: 0;
+          max-width: 1.25rem;
+          justify-content: center;
+          color: $color-text!important;
+          border-color: transparent!important;
+          background-color: transparent!important;
+          &:after {
+            content: none;
+          }
+          &:focus {
+            box-shadow: none!important;
+          }
+        }
+        .dropdown-menu {
+          padding: 0.25rem 0;
+        }
+        .dropdown-item {
+          &:hover,
+          &:focus {
+            color: $color-main;
+            background-color: rgba(56, 120, 243, 0.1);
+          }
+        }
+      }
+      &-button {
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+    }
+    &-checkbox {
+      padding-left: 1rem;
+      min-height: 1rem;
+      width: 0;
+      height: 1rem;
+      margin: 0 auto;
+      .custom-control-label {
+        &:before,
+        &:after {
+          top: 0;
+          left: -1rem;
+        }
+      }
+    }
+    &-link {
+      color: $color-text;
+      &:hover {
+        color: $color-main;
+      }
+    }
+    &-feedback {
+      font-size: 80%;
+      margin-top: 0.25rem;
+      color: $color-warning;
+    }
+  }
+  /*======================================
+  =            Custom b-table            =
+  ======================================*/
+  .table {
+    overflow: hidden;
+    margin-bottom: 0;
+    th,
+    td {
+      padding: 0.875rem 1rem;
+      border: 0.0625rem solid #c8c9d0;
+    }
+    thead {
+      background-color: #eaebef;
+      th {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $color-controltext;
+      }
+    }
+    tbody {
+      font-size: 0.8125rem;
+    }
+    &.b-table {
+      > thead,
+      > tfoot {
+        > tr {
+          > th[aria-sort] {
+            padding-right: 1.5rem;
+            &:after {
+              opacity: 1;
+              content: '';
+              top: 50%;
+              bottom: auto;
+              right: 0.25rem;
+              right: 0.875rem;
+              width: 0.5rem;
+              height: 0.75rem;
+              padding-bottom: 0;
+              transform: translateY(-50%);
+              background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3e%3cpath fill='%23787d8e' d='M0 5 L4 0 L8 5 Z' /%3e%3cpath fill='%23787d8e' d='M0 7 L4 12 L8 7 Z' /%3e%3c/svg%3e");
+            }
+            &[aria-sort="ascending"] {
+              &:after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3e%3cpath fill='%23787d8e' d='M0 5 L4 0 L8 5 Z' /%3e%3cpath fill='%23232735' d='M0 7 L4 12 L8 7 Z' /%3e%3c/svg%3e");
+              }
+            }
+            &[aria-sort="descending"] {
+              &:after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3e%3cpath fill='%23232735' d='M0 5 L4 0 L8 5 Z' /%3e%3cpath fill='%23787d8e' d='M0 7 L4 12 L8 7 Z' /%3e%3c/svg%3e");
+              }
+            }
+          }
+        }
+      }
+    }
+    .id-column {
+      width: 3rem;
+    }
+    .influencer-column {
+      width: 32rem;
+      &--small {
+        width: 7.875rem;
+      }
+      &-td {
+        padding: 0.5rem 1rem;
+      }
+    }
+    .audience-column {
+      width: 7.5rem;
+    }
+    .platform-column {
+      width: 10.25rem;
+      &-td {
+        padding: 0.75rem 1rem;
+      }
+    }
+    .status-column {
+      width: 6.5625rem;
+    }
+    .time-added-column {
+      width: 8.875rem;
+    }
+    .actions-column {
+      width: 3rem;
+    }
+    .brand-column {
+      width: 8.25rem;
+    }
+    .average-engagement-column {
+      width: 11.25rem;
+    }
+    .engagement-column {
+      width: 9.25rem;
+    }
+    .average-view-column {
+      width: 7.75rem;
+    }
+    .cost-column {
+      width: 7rem;
+    }
+    .actual-cost-column {
+      width: 8.75rem;
+    }
+    .view-column {
+      width: 7.5rem;
+    }
+    .report-column {
+      width: 32rem;
+    }
+    .post-column {
+      width: 7.5rem;
+    }
+  }
+  /*=====  End of Custom b-table  ======*/
+}

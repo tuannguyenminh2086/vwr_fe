@@ -1,0 +1,72 @@
+/*
+*  Global variables.
+*
+*  [Table of contents]
+*
+*  [&. Content / #key]
+*  [Let press Ctrl + f and type of paste the key, then press Enter to search the content]
+*
+*  Summary:
+*
+*  01. Colors
+*  02. Typography
+*  03. Z Index
+*  04. Select
+*
+*
+*/
+
+/*==================================
+=            01. Colors            =
+==================================*/
+
+$color-main: #3878f3;
+$color-success: #1ec53b;
+$color-warning: #ff3b30;
+$color-text: #2c2f37;
+$color-title: #191d28;
+$color-subtext: #787d8e;
+$color-controltext: #8b90a0;
+$color-app-bg: #eaebef;
+$color-white: #fff;
+$color-black: #000;
+$color-orange: #ff8a00;
+$color-border: #c8c9d0;
+$color-yellow: #ffc107;
+$color-pink: #ed4881;
+$color-form-title: #8b90a0;
+$color-social-post: #505565;
+$color-form-valid: #28a745;
+$color-form-invalid: #dc3545;
+
+/*=====  End of 01. Colors  ======*/
+
+
+/*======================================
+=            02. Typography            =
+======================================*/
+
+$ff-Poppins: Poppins, sans-serif;
+$ff-Righteous: Righteous, cursive;
+$line-height: 1.42858;
+
+/*=====  End of 02. Typography  ======*/
+
+
+/*===================================
+=            03. Z Index            =
+===================================*/
+
+$z-index-headbar: 100;
+$z-index-modal: 150;
+
+/*=====  End of 03. Z Index  ======*/
+
+
+/*===================================
+=            04. Select            =
+===================================*/
+
+$vs-component-placeholder-color: #6c757d;
+
+/*=====  End of 04. Select   ======*/

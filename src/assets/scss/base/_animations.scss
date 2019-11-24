@@ -1,0 +1,118 @@
+/*
+*  Transition Animations.
+*
+*  [Table of contents]
+*
+*  [&. Content / #key]
+*  [Let press Ctrl + f and type of paste the key, then press Enter to search the content]
+*
+*  Summary:
+*
+*  01. Fade
+*  02. Slide
+*  03. Slide Right
+*  04. Slide Left
+*
+*/
+
+
+/*================================
+=            01. Fade            =
+================================*/
+
+.fade {
+  &-enter {
+    opacity: 0;
+    &-active {
+      transition: opacity 0.3s;
+    }
+  }
+  &-leave {
+    &-active {
+      transition: opacity 0.3s;
+    }
+    &-to {
+      opacity: 0;
+    }
+  }
+}
+
+/*=====  End of 01. Fade  ======*/
+
+
+/*=================================
+=            02. Slide            =
+=================================*/
+
+.slide {
+  &-enter {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    &-active {
+      transition: all 0.5s ease;
+    }
+  }
+  &-leave {
+    &-active {
+      transition: all 0.5s ease;
+    }
+    &-to {
+      opacity: 0;
+      transform: translateX(1.5rem);
+    }
+  }
+}
+
+/*=====  End of 02. Slide  ======*/
+
+
+/*=======================================
+=            03. Slide Right            =
+=======================================*/
+
+.slide-right {
+  &-enter {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    &-active {
+      transition: all 0.5s ease;
+    }
+  }
+  &-leave {
+    &-active {
+      transition: all 0.5s ease;
+    }
+    &-to {
+      opacity: 0;
+      transform: translateX(1.5rem);
+    }
+  }
+}
+
+/*=====  End of 03. Slide Right  ======*/
+
+
+/*======================================
+=            03. Slide Left            =
+======================================*/
+
+.slide-left {
+  &-enter {
+    opacity: 0;
+    transform: translateX(1.5rem);
+    &-active {
+      transition: all 0.5s ease;
+    }
+  }
+  &-leave {
+    &-active {
+      transition: all 0.5s ease;
+    }
+    &-to {
+      opacity: 0;
+      transform: translateX(-1.5rem);
+    }
+  }
+}
+
+/*=====  End of 03. Slide Left  =====*/

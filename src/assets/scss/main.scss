@@ -1,0 +1,165 @@
+/*
+*  Main.
+*
+*  [Table of contents]
+*
+*  [&. Content / #key]
+*  [Let press Ctrl + f and type of paste the key, then press Enter to search the content]
+*
+*  Summary:
+*
+*  01. Custom toast
+*  02. Override b-tab component
+*  03. Override v-select component
+*  04. Vuebar component
+*  05. Override b-form-checkbox component
+*
+*/
+
+
+@import './base/base';
+@import './components/components';
+
+/*========================================
+=            01. Custom toast            =
+========================================*/
+
+// b-toaster
+// b-toaster-slot
+// b-toast
+// toast vw-toast
+// toast-header | toast-body
+.b-toaster.b-toaster-top-center .b-toaster-slot,
+.b-toast,
+.vw-toast {
+  max-width: 39.375rem;
+}
+
+.vw-toast {
+  .toast-header {
+    position: relative;
+    border-bottom: 0;
+    padding: 0.5rem 2rem;
+    justify-content: center;
+    strong {
+      font-weight: 400;
+      margin-right: 0!important;
+    }
+  }
+  .close {
+    float: none;
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+  }
+}
+
+.b-toast .vw-toast .toast-body {
+  display: none;
+}
+
+/*=====  End of 01. Custom toast  ======*/
+
+
+/*====================================================
+=            02. Override b-tab component            =
+====================================================*/
+
+.tab-pane {
+  outline: none;
+}
+
+/*=====  End of 02. Override b-tab component  ======*/
+
+
+/*=======================================================
+=            03. Override v-select component            =
+=======================================================*/
+
+.vs {
+  &__search,
+  &__search:focus,
+  &__dropdown-menu li {
+    font-size: 0.8125rem;
+    padding: 0.575rem 1rem;
+  }
+  &__actions {
+    padding-right: 0.625rem;
+  }
+  &__selected {
+    border: 0;
+    color: $color-text;
+    font-size: 0.8125rem;
+    margin: 0.3125rem 0.25rem 0;
+    &-options {
+      flex-wrap: nowrap;
+      overflow: hidden;
+      justify-content: flex-start;
+    }
+  }
+  &__open-indicator {
+    font-size: 0;
+    bottom: 0.8125rem;
+    border: 0.3125rem solid transparent;
+    border-bottom: 0;
+    border-top-color: $color-subtext;
+  }
+}
+
+/*=====  End of 03. Override v-select component  ======*/
+
+
+/*============================================
+=            04. Vuebar component            =
+============================================*/
+
+.vb {
+  &.vb-visible {
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      width: 0.3125rem;
+      height: 100%;
+      border-radius: 0.625rem;
+      background-color: $color-app-bg;
+    }
+  }
+  > .vb-dragger {
+    right: 0;
+    z-index: 5;
+    width: 0.3125rem;
+    > .vb-dragger-styler {
+      display: block;
+      height: 100%;
+      border-radius: 0.625rem;
+      background-color: $color-main;
+    }
+  }
+}
+
+/*=====  End of 04. Vuebar component  ======*/
+
+
+/*==============================================================
+=            05. Override b-form-checkbox component            =
+==============================================================*/
+
+.custom-control-label:before {
+  border-width: 0.125rem;
+}
+
+.custom-control-input:checked ~ .custom-control-label:before {
+  background-color: transparent;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label:after {
+  @include checkIcon($color-main);
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label:after {
+  @include checkIconDot($color-main);
+}
+
+/*=====  End of 05. Override b-form-checkbox component  ======*/
